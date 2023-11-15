@@ -93,14 +93,14 @@ public class JdbcTemplateItemRepositoryV2 implements ItemRepository {
         }
         boolean andFlag = false;
         if (StringUtils.hasText(itemName)) {
-            sql += " item_name like concat('%',itemName,'%')";
+            sql += " item_name like concat('%',:itemName,'%')";
             andFlag = true;
         }
         if (maxPrice != null) {
             if (andFlag) {
                 sql += " and";
             }
-            sql += " price <= maxPrice";
+            sql += " price <= :maxPrice";
         }
         log.info("sql={}", sql);
 
