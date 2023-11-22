@@ -8,6 +8,7 @@ import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.ItemSearchCond;
 import hello.itemservice.repository.ItemUpdateDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
@@ -17,7 +18,7 @@ import java.util.Optional;
 
 import static hello.itemservice.domain.QItem.*;
 
-@RequiredArgsConstructor
+@Repository
 @Transactional
 public class JpaItemRepositoryV3 implements ItemRepository {
 
